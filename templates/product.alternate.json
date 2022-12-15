@@ -1,0 +1,31 @@
+{
+  "layout": "theme.alternate",
+  "sections": {
+    "product": {
+      "type": "alternate-product",
+      "blocks": {
+        "dc90c4b2-3375-406e-b9fa-37eb02e83068": {
+          "type": "accordeon",
+          "settings": {
+            "accordeon_title": "Accordeon heading",
+            "accordeon_text": "<i>Accordeon text<\/i>"
+          }
+        }
+      },
+      "block_order": [
+        "dc90c4b2-3375-406e-b9fa-37eb02e83068"
+      ],
+      "settings": {
+      }
+    },
+    "recommendations": {
+      "type": "alternate-recommendations",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product",
+    "recommendations"
+  ]
+}

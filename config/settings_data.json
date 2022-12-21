@@ -211,7 +211,8 @@
       "alternate-header": {
         "type": "alternate-header",
         "settings": {
-          "menu": ""
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "menu": "main-menu"
         }
       },
       "alternate-footer": {
@@ -220,31 +221,32 @@
           "0c57eece-7c5e-4b8d-b6a0-e4c4da47ae07": {
             "type": "about",
             "settings": {
-              "about_title": "About",
-              "about_text": "<em>Susparsa Store<\/em> <strong>Geneva, Switzerland<\/strong>",
-              "about_facebook_link": "https:\/\/www.facebook.com\/",
-              "about_instagram_link": "https:\/\/www.instagram.com\/"
+              "about_title": "About us",
+              "about_company_name": "Guitar Shop",
+              "about_company_location": "Vilnius, Lithuania",
+              "about_facebook_link": "https:\/\/www.facebook.com\/GuitarCenter",
+              "about_instagram_link": "https:\/\/www.instagram.com\/guitarcenter"
             }
           },
           "274257db-f9f6-410a-9623-ea8825f23dd2": {
             "type": "menu",
             "settings": {
-              "menu_title": "Menu",
-              "menu_list": ""
+              "menu_title": "Company",
+              "menu_list": "main-menu"
             }
           },
           "b604b3f5-48a0-4bab-9ec4-32d1bf9974bd": {
             "type": "menu",
             "settings": {
-              "menu_title": "Menu",
-              "menu_list": ""
+              "menu_title": "Useful links",
+              "menu_list": "footer"
             }
           },
-          "bf760cc9-9caf-4584-9f49-02c3f850dfe4": {
-            "type": "menu",
+          "2c8bcb83-0507-4f27-87d8-42840b7287a2": {
+            "type": "copyright",
             "settings": {
-              "menu_title": "Menu",
-              "menu_list": ""
+              "copyright_company": "Guitar Shop",
+              "copyright_year": "2022"
             }
           }
         },
@@ -252,7 +254,7 @@
           "0c57eece-7c5e-4b8d-b6a0-e4c4da47ae07",
           "274257db-f9f6-410a-9623-ea8825f23dd2",
           "b604b3f5-48a0-4bab-9ec4-32d1bf9974bd",
-          "bf760cc9-9caf-4584-9f49-02c3f850dfe4"
+          "2c8bcb83-0507-4f27-87d8-42840b7287a2"
         ],
         "settings": {
         }

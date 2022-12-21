@@ -28,7 +28,7 @@
       "settings": {
         "title": "",
         "sort": "alphabetical",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "columns_desktop": 3,
         "columns_mobile": "1"
       }

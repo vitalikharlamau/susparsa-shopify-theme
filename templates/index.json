@@ -48,6 +48,33 @@
         "show_text_below": false
       }
     },
+    "efdb31af-fc96-47dd-b5ee-ed8aa6e45875": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bestsellers",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "electric",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -171,6 +198,7 @@
   },
   "order": [
     "image_banner",
+    "efdb31af-fc96-47dd-b5ee-ed8aa6e45875",
     "rich_text",
     "video",
     "afb40641-8cec-48c8-9aa9-30489999bded",

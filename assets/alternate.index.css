@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'Avenir Next Rounded Std';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(./AvenirNextRoundedStd-Reg.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Avenir Next Rounded Std';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+    src: url(./AvenirNextRoundedStd-Med.woff2) format('woff2');
+}
+
 :root {
     /*Palette*/
     --palette-mirage: #1A1F29;
@@ -48,6 +64,7 @@
     --time-transition-icons: 0.15s;
     --time-transition-label: 0.3s;
     --time-transition-button: 0.2s;
+    --time-accordion-animation: 0.25s;
 }
 
 *,
@@ -277,9 +294,7 @@ abbr {
     display: block;
     max-width: 29.5625rem;
     width: 100%;
-    height: auto;
-    aspect-ratio: 29.5625/44.1875;
-    object-fit: cover;
+    object-fit: contain;
     margin: 0 auto;
 }
 
@@ -541,59 +556,97 @@ abbr {
 
 /*#endregion*/
 
-/*#region Accordeon*/
+/*#region Accordion*/
 
-.accordeon__list {
+@keyframes animationShow {
+    from {
+        max-height: 0;
+        padding: 0;
+    };
+    to {
+        max-height: 100%;
+        padding: 0.5rem 0 2.5rem;
+    };
+}
+
+@keyframes animationHide {
+    from {
+        max-height: 100%;
+        padding: 0.5rem 0 2.5rem;
+    };
+    to {
+        max-height: 0;
+        padding: 0;
+    };
+}
+
+.accordion__list {
     list-style: none;
 }
 
-.accordeon__item {
+.accordion__item {
     border-top: 0.0625rem solid var(--border-color);
 }
 
-.accordeon__item:last-of-type {
+.accordion__item:last-of-type {
     border-bottom: 0.0625rem solid var(--border-color);
 }
 
-.accordeon__button {
+.accordion__button {
     appearance: none;
     display: block;
     width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    width: 100%;
+    padding: 2rem 0;
     color: inherit;
     background-color: inherit;
+    text-align: start;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     letter-spacing: 0.01rem;
     border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     cursor: pointer;
+    position: relative;
 }
 
-.accordeon__button--active {
-    padding-bottom: 0;
-}
-
-.accordeon__image {
-    display: block;
+.accordion__button::before {
+    content: "";
+    position: absolute;
     width: 0.75rem;
+    border-bottom: 0.0625rem solid var(--text-color-primary);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.accordion__button::after {
+    content: "";
+    position: absolute;
     height: 0.75rem;
-    object-fit: contain;
+    border-right: 0.0625rem solid var(--text-color-primary);
+    right: 0.375rem;
+    top: 50%;
+    transform: translateX(50%) translateY(-50%);
+    transition: transform var(--time-accordion-animation) linear;
 }
 
-.accordeon__content {
-    padding: 2.5rem 0;
+.accordion__item--open .accordion__button::after {
+    transform: translateX(50%) translateY(-50%) rotate(90deg);
 }
 
-.accordeon__content--hide {
-    display: none;
+.accordion__content {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    animation: animationHide var(--time-accordion-animation) linear;
 }
 
+.accordion__item--open .accordion__content {
+    overflow: visible;
+    max-height: 100%;
+    padding: 0.5rem 0 2.5rem;
+    animation: animationShow var(--time-accordion-animation) linear;
+}
 
 /*#endregion*/
 

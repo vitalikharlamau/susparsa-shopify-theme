@@ -1,170 +1,156 @@
-<div class="product__container container">
-  <img class="product__image" src="https://vitaliykharlamov.netlify.app/media/photo-t-shirt-white.jpg" alt="White unisex t-shirt photo">
-  <form class="product__form form" action="/form">
-      <h1 class="form__heading heading heading--xl"><span class="form__color">White</span> unisex t-shirt</h1>
-      <p class="form__price"><abbr class="form__price-currency" title="Swiss Franc">CHF</abbr> <span class="form__price-value">40</span></p>
-      <p class="form__tax"><small>Tax included</small></p>
-      <fieldset class="form__fildset fieldset">
-          <legend class="fieldset__title">Size</legend>
-          <div class="fieldset__group">
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="xs" value="xs" name="size">
-                  <label class="radio__label radio__label--size" for="xs">
-                      <abbr class="radio__size" title="Extra small size">XS</abbr>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="s" value="s" name="size" checked>
-                  <label class="radio__label radio__label--size" for="s">
-                      <abbr class="radio__size" title="Small size">S</abbr>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="m" value="m" name="size">
-                  <label class="radio__label radio__label--size" for="m">
-                      <abbr class="radio__size" title="Medium size">M</abbr>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="l" value="l" name="size">
-                  <label class="radio__label radio__label--size" for="l">
-                      <abbr class="radio__size" title="Large size">L</abbr>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="xl" value="xl" name="size">
-                  <label class="radio__label radio__label--size" for="xl">
-                      <abbr class="radio__size" title="Extra large size">XL</abbr>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="2xl" value="2xl" name="size" disabled>
-                  <label class="radio__label radio__label--size" for="2xl">
-                      <abbr class="radio__size" title="Extra extra large size">2XL</abbr>
-                  </label>
-              </div>
-          </div>
-      </fieldset>
-      <fieldset class="form__fildset fieldset">
-          <legend class="fieldset__title">Color - <span class="form__color">White</span></legend>
-          <div class="fieldset__group">
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="white" value="white" name="color" checked>
-                  <label class="radio__label radio__label--color" for="white" data-title="White">
-                      <div class="radio__color radio__color--white"></div>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="black" value="black" name="color">
-                  <label class="radio__label radio__label--color" for="black" data-title="Black">
-                      <div class="radio__color radio__color--black"></div>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="gray" value="gray" name="color">
-                  <label class="radio__label radio__label--color" for="gray" data-title="Gray">
-                      <div class="radio__color radio__color--gray"></div>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="purple_latte" value="purple_latte" name="color">
-                  <label class="radio__label radio__label--color" for="purple_latte" data-title="Purple latte">
-                      <div class="radio__color radio__color--purple-latte"></div>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="pink_latte" value="pink_latte" name="color" disabled>
-                  <label class="radio__label radio__label--color" for="pink_latte" data-title="Pink latte">
-                      <div class="radio__color radio__color--pink-latte"></div>
-                  </label>
-              </div>
-              <div class="radio">
-                  <input class="radio__input visually-hidden" type="radio" id="orange_latte" value="orange_latte" name="color" disabled>
-                  <label class="radio__label radio__label--color" for="orange_latte" data-title="Orange latte">
-                      <div class="radio__color radio__color--orange-latte"></div>
-                  </label>
-              </div>
-          </div>
-      </fieldset>
-      <fieldset class="form__quantity quantity">
-          <legend class="quantity__title">Quantity</legend>
-          <div class="quantity__controls">
-              <input class="quantity__input" type="number" min="1" max="999" step="1" value="1">
-              <button class="quantity__button quantity__button--increase" type="button">
-                  <span class="visually-hidden">Increase quantity</span>
-                  -
-              </button>
-              <button class="quantity__button quantity__button--decrease" type="button">
-                  <span class="visually-hidden">Decrease quantity</span>
-                  +
-              </button>
-          </div>
-      </fieldset>
-      <button class="form__button button button--light" type="submit" value="add">Add to cart</button>
-      <button class="form__button button button--dark" type="submit" value="buy">Buy it now</button>
-      <p class="form__info">A unisex basic garment with a loose fit. Light and comfortable to your skin.</p>
-      <p class="form__info">Certification of cotton - <abbr class="form__info-abbr" title="Global organic textile standart">GOTS</abbr></p>
-  </form>
-  <div class="accordeon">
-      <ul class="accordeon__list" role="list">
-          <li class="accordeon__item">
-              <button class="accordeon__button accordeon__button--active" type="button">
-                  <span class="accordeon__text">Sizing & Fit</span>
-                  <img class="accordeon__image" src="https://vitaliykharlamov.netlify.app/media/symbol-minus.svg" alt="">
-              </button>
-              <p class="accordeon__content">Olga is 175cm, she is wearing a size S.</p>
-          </li>
-          <li class="accordeon__item">
-              <button class="accordeon__button" type="button">
-                  <span class="accordeon__text">Composition & Care</span>
-                  <img class="accordeon__image" src="https://vitaliykharlamov.netlify.app/media/symbol-plus.svg" alt="">
-              </button>
-              <p class="accordeon__content accordeon__content--hide"></p>
-          </li>
-          <li class="accordeon__item">
-              <button class="accordeon__button">
-                  <span class="accordeon__text">Delivery & Returns</span>
-                  <img class="accordeon__image" src="https://vitaliykharlamov.netlify.app/media/symbol-plus.svg" alt="">
-              </button>
-              <p class="accordeon__content accordeon__content--hide"></p>
-          </li>
-      </ul>
-  </div>
-</div>
+<section class="product">
+    <div class="product__container container">
+        <img class="product__image" src="{{product.featured_image | image_url}}" alt="{{product.title}}">
+        <form class="product__form form" action="/form">
+            <h1 class="form__heading heading heading--xl">{{product.title}}</h1>
+            <p class="form__price"><abbr class="form__price-currency" title="Euro">EUR</abbr> <span class="form__price-value">{{product.price | money_without_currency}}</span></p>
+            <p class="form__tax"><small>Tax included</small></p>
+            <fieldset class="form__fildset fieldset">
+                <legend class="fieldset__title">Size</legend>
+                <div class="fieldset__group">
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="xs" value="xs" name="size">
+                        <label class="radio__label radio__label--size" for="xs">
+                            <abbr class="radio__size" title="Extra small size">XS</abbr>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="s" value="s" name="size" checked>
+                        <label class="radio__label radio__label--size" for="s">
+                            <abbr class="radio__size" title="Small size">S</abbr>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="m" value="m" name="size">
+                        <label class="radio__label radio__label--size" for="m">
+                            <abbr class="radio__size" title="Medium size">M</abbr>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="l" value="l" name="size">
+                        <label class="radio__label radio__label--size" for="l">
+                            <abbr class="radio__size" title="Large size">L</abbr>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="xl" value="xl" name="size">
+                        <label class="radio__label radio__label--size" for="xl">
+                            <abbr class="radio__size" title="Extra large size">XL</abbr>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="2xl" value="2xl" name="size" disabled>
+                        <label class="radio__label radio__label--size" for="2xl">
+                            <abbr class="radio__size" title="Extra extra large size">2XL</abbr>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form__fildset fieldset">
+                <legend class="fieldset__title">Color - <span class="form__color">White</span></legend>
+                <div class="fieldset__group">
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="white" value="white" name="color" checked>
+                        <label class="radio__label radio__label--color" for="white" data-title="White">
+                            <div class="radio__color radio__color--white"></div>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="black" value="black" name="color">
+                        <label class="radio__label radio__label--color" for="black" data-title="Black">
+                            <div class="radio__color radio__color--black"></div>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="gray" value="gray" name="color">
+                        <label class="radio__label radio__label--color" for="gray" data-title="Gray">
+                            <div class="radio__color radio__color--gray"></div>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="purple_latte" value="purple_latte" name="color">
+                        <label class="radio__label radio__label--color" for="purple_latte" data-title="Purple latte">
+                            <div class="radio__color radio__color--purple-latte"></div>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="pink_latte" value="pink_latte" name="color" disabled>
+                        <label class="radio__label radio__label--color" for="pink_latte" data-title="Pink latte">
+                            <div class="radio__color radio__color--pink-latte"></div>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <input class="radio__input visually-hidden" type="radio" id="orange_latte" value="orange_latte" name="color" disabled>
+                        <label class="radio__label radio__label--color" for="orange_latte" data-title="Orange latte">
+                            <div class="radio__color radio__color--orange-latte"></div>
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="form__quantity quantity">
+                <legend class="quantity__title">Quantity</legend>
+                <div class="quantity__controls">
+                    <input class="quantity__input" type="number" min="1" max="999" step="1" value="1">
+                    <button class="quantity__button quantity__button--increase" type="button">
+                        <span class="visually-hidden">Increase quantity</span>
+                        -
+                    </button>
+                    <button class="quantity__button quantity__button--decrease" type="button">
+                        <span class="visually-hidden">Decrease quantity</span>
+                        +
+                    </button>
+                </div>
+            </fieldset>
+            <button class="form__button button button--light" type="submit" value="add">Add to cart</button>
+            <button class="form__button button button--dark" type="submit" value="buy">Buy it now</button>
+            <p class="form__info">{{product.description}}</p>
+        </form>
+        <div class="accordion">
+            <span class="visually-hidden" aria-hidden="true" id="accordion_heading">Additional product information</span>
+            <ul class="accordion__list" role="list" aria-labelledby="accordion_heading">
+                {%- assign accordions = section.blocks | where: "type", "accordion" -%}
+                {%- for accordion in accordions -%}  
+                    {%- if accordion != blank -%}
+                        <li class="accordion__item">
+                            <button class="accordion__button" type="button" aria-expanded="false">{{accordion.settings.accordion_title}}</button>
+                            <div class="accordion__content" aria-hidden="true">
+                                <p class="accordion__text">{{accordion.settings.accordion_text}}</p>
+                            </div>
+                        </li>
+                    {%- endif -%}
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</section>
+
+
 
 {% schema %}
-  {
-    "name": "alternate-product",
-    "tag": "section",
-    "class": "product",
-    "templates": ["product"],
-    "limit": 1,
-    "settings": [],
-    "blocks": [
-      {
-        "name": "Accordeon",
-        "type": "accordeon",
-        "settings": [
-          {
-            "type": "text",
-            "id": "accordeon_title",
-            "label": "Heading",
-            "default": "Accordeon heading"
-          },
-          {
-            "type": "inline_richtext",
-            "id": "accordeon_text",
-            "default": "<i>Accordeon text</i>",
-            "label": "Content"
-          }
+    {
+        "name": "alternate-product",
+        "templates": ["product"],
+        "limit": 1,
+        "settings": [],
+        "blocks": [
+        {
+            "name": "Accordion",
+            "type": "accordion",
+            "settings": [
+            {
+                "type": "text",
+                "id": "accordion_title",
+                "label": "Heading",
+                "default": "Accordion heading"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "accordion_text",
+                "default": "<i>Accordion text</i>",
+                "label": "Content"
+            }
+            ]
+        }
         ]
-      }
-    ]
-  }
+    }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

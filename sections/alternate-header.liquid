@@ -1,59 +1,50 @@
-<div class="header__container container">
-    <nav class="header-navigation">
-        <ul class="header-navigation__list" role="list">
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/women">Women</a>
-            </li>
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/men">Men</a>
-            </li>
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/kids">Kids</a>
-            </li>
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/company">Company</a>
-            </li>
-        </ul>
-        <a href="/home" class="header-navigation__logo">
-            <span class="visually-hidden">Homepage</span>
-            <img class="header-navigation__image" src="https://vitaliykharlamov.netlify.app/media/logo.svg" alt="Susparsa logo">
-        </a>
-        <ul class="header-navigation__list" role="list">
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/account">Account</a>
-            </li>
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/search">Search</a>
-            </li>
-            <li class="header-navigation__item">
-                <a class="header-navigation__link link link--xl" href="/cart">Cart (<span>0</span>)</a>
-            </li>
-        </ul>
-    </nav>
-</div>
+<header class="header">
+    <div class="header__container container">
+        <nav class="header-navigation">
+            {%- if section.settings.menu != blank -%}
+                <ul class="header-navigation__list" role="list">
+                    {%- for link in section.settings.menu.links -%}
+                        <li class="header-navigation__item">
+                            <a class="header-navigation__link link link--xl" href="{{link.url}}">{{link.title}}</a>
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            {%- endif -%}
+            <a href="{{routes.root_url}}" class="header-navigation__logo">
+                <span class="visually-hidden">Homepage</span>
+                {%- if section.settings.logo != blank -%}
+                    <img class="header-navigation__image" src="{{section.settings.logo | image_url}}" alt="Logo">
+                {%- endif -%}
+            </a>
+            <ul class="header-navigation__list" role="list">
+                <li class="header-navigation__item">
+                    <a class="header-navigation__link link link--xl" href="{{routes.account_url}}">Account</a>
+                </li>
+                <li class="header-navigation__item">
+                    <a class="header-navigation__link link link--xl" href="{{routes.search_url}}">Search</a>
+                </li>
+                <li class="header-navigation__item">
+                    <a class="header-navigation__link link link--xl" href="{{routes.cart_url}}">Cart ({{cart.item_count}})</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 {% schema %}
-  {
-    "name": "alternate-header",
-    "tag": "header",
-    "class": "header",
-    "settings": [
-      {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo"
-      },
-      {
-        "type": "link_list",
-        "id": "menu",
-        "label": "Menu"
-      }
-    ]
-  }
+    {
+        "name": "alternate-header",
+        "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+        }
+        ]
+    }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

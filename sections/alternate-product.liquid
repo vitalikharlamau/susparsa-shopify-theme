@@ -108,8 +108,7 @@
         <div class="accordion">
             <span class="visually-hidden" aria-hidden="true" id="accordion_heading">Additional product information</span>
             <ul class="accordion__list" role="list" aria-labelledby="accordion_heading">
-                {%- assign accordions = section.blocks | where: "type", "accordion" -%}
-                {%- for accordion in accordions -%}  
+                {%- for accordion in section.blocks -%}  
                     {%- if accordion != blank -%}
                         <li class="accordion__item">
                             <button class="accordion__button" type="button" aria-expanded="false">{{accordion.settings.accordion_title}}</button>

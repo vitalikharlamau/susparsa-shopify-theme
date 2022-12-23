@@ -2,38 +2,9 @@
     <div class="interesting__container container">
         <h2 class="interesting__heading heading heading--xl">{{section.settings.recommendations_title}}</h2>
         <ul style="grid-template-columns: repeat({{section.settings.quality}}, 1fr);" class="interesting__list" role="list">
-            {%- for product in section.settings.collection.products -%}
+            {%- for item in section.settings.collection.products -%}
                 <li class="interesting__item">
-                    <article class="card">
-                        <ul class="card__tags tags" role="list">
-                            {%- if product.available == blank -%}
-                                <li class="tags__item tags__item--sold-out">Sold out</li>
-                            {%- endif -%}
-                        </ul>
-                        <img class="card__image" src="{{product.featured_image | image_url}}" alt="{{product.title}}">
-                        <h3 class="card__heading heading">
-                            <a class="card__link link link--xl" href="{{product.url}}">{{product.title}}</a>
-                        </h3>
-                        <ul class="card__list" role="list">
-                            <li class="card__item">
-                                <span class="visually-hidden">Latte</span>
-                                <div class="card__color card__color--latte"></div>
-                            </li>
-                            <li>
-                                <span class="visually-hidden">Orange latte</span>
-                                <div class="card__color card__color--orange-latte"></div>
-                            </li>
-                            <li>
-                                <span class="visually-hidden">Pink latte</span>
-                                <div class="card__color card__color--pink-latte"></div>
-                            </li>
-                            <li>
-                                <span class="visually-hidden">Purple latte</span>
-                                <div class="card__color card__color--purple-latte"></div>
-                            </li>
-                        </ul>
-                        <p class="card__price"><abbr class="card__price-currency" title="Euro">EUR</abbr> <span class="card__price-value">{{product.price | money_without_currency}}</span></p>
-                    </article>
+                    {%- render "alternate-product-card" card: item -%}
                 </li>
             {%- endfor -%}
         </ul>

@@ -241,20 +241,12 @@
               "menu_title": "Useful links",
               "menu_list": "footer"
             }
-          },
-          "2c8bcb83-0507-4f27-87d8-42840b7287a2": {
-            "type": "copyright",
-            "settings": {
-              "copyright_company": "Guitar Shop",
-              "copyright_year": "2022"
-            }
           }
         },
         "block_order": [
           "0c57eece-7c5e-4b8d-b6a0-e4c4da47ae07",
           "274257db-f9f6-410a-9623-ea8825f23dd2",
-          "b604b3f5-48a0-4bab-9ec4-32d1bf9974bd",
-          "2c8bcb83-0507-4f27-87d8-42840b7287a2"
+          "b604b3f5-48a0-4bab-9ec4-32d1bf9974bd"
         ],
         "settings": {
         }

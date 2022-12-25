@@ -4,7 +4,7 @@
             <li class="tags__item tags__item--sold-out">Sold out</li>
         {%- endif -%}
     </ul>
-    <img class="card__image" src="{{card.featured_image | image_url}}" alt="{{card.title}}">
+    <img class="card__image" src="{{card.featured_image.src | image_url}}" alt="{{card.featured_image.alt}}">
     <h3 class="card__heading heading">
         <a class="card__link link link--xl" href="{{card.url}}">{{card.title}}</a>
     </h3>

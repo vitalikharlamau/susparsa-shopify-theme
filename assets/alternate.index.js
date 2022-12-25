@@ -10,13 +10,11 @@ const STATES = {
     HIDE: false,
 };
 
-const addDot = (str) => "." + str;
-
 class Accordion {
     constructor(element) {
         this.accordion = element;
-        this.button = this.accordion.querySelector(addDot(CLASSES.BUTTON));
-        this.content = this.accordion.querySelector(addDot(CLASSES.CONTENT));
+        this.button = this.accordion.querySelector(`.${CLASSES.BUTTON}`);
+        this.content = this.accordion.querySelector(`.${CLASSES.CONTENT}`);
 
         this.state = STATES.HIDE;
 
@@ -24,32 +22,28 @@ class Accordion {
     }
 
     toggle() {
-        if (this.state === STATES.HIDE) {
-            this.show();
-        } else {
-            this.hide();
-        }
+        this.state === STATES.HIDE ? this.show() : this.hide();
     }
 
     show() {
         this.state = STATES.SHOW;
         this.accordion.classList.add(CLASSES.ACCORDION_OPEN);
-        this.setAccessibility(this.state);
+        this.updateAcessibility();
     }
 
     hide() {
         this.state = STATES.HIDE;
         this.accordion.classList.remove(CLASSES.ACCORDION_OPEN);
-        this.setAccessibility(this.state);
+        this.updateAcessibility();
     }
 
-    setAccessibility(isOpen) {
-        this.button.setAttribute("aria-expanded", isOpen);
-        this.content.setAttribute("aria-hidden", !isOpen);
+    updateAcessibility() {
+        this.button.setAttribute("aria-expanded", this.state);
+        this.content.setAttribute("aria-hidden", !this.state);
     }
 }
 
-const accordions = document.querySelectorAll(addDot(CLASSES.ACCORDION));
+const accordions = document.querySelectorAll(`.${CLASSES.ACCORDION}`);
 
 accordions.forEach((accordion) => {
     new Accordion(accordion);

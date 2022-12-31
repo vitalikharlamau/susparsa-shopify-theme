@@ -1,16 +1,16 @@
-const CLASSES = {
+const STATES = {
+    SHOW: true,
+    HIDE: false,
+};
+
+export const CLASSES = {
     ACCORDION: "accordion__item",
     ACCORDION_OPEN: "accordion__item--open",
     BUTTON: "accordion__button",
     CONTENT: "accordion__content",
 };
 
-const STATES = {
-    SHOW: true,
-    HIDE: false,
-};
-
-class Accordion {
+export class Accordion {
     constructor(element) {
         this.accordion = element;
         this.button = this.accordion.querySelector(`.${CLASSES.BUTTON}`);
@@ -42,9 +42,3 @@ class Accordion {
         this.content.setAttribute("aria-hidden", !this.state);
     }
 }
-
-const accordions = document.querySelectorAll(`.${CLASSES.ACCORDION}`);
-
-accordions.forEach((accordion) => {
-    new Accordion(accordion);
-});

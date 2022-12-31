@@ -1,0 +1,38 @@
+const cardAddedHeandler = (event) => {
+    const header = new DOMParser().parseFromString(event.detail.header, "text/html");
+    const cartCounterUpdated = header.getElementById("cart_counter");
+    const cartCounter = document.getElementById("cart_counter");
+
+    cartCounter.replaceWith(cartCounterUpdated);
+};
+
+document.addEventListener("cart:added", cardAddedHeandler);
+
+// Внутри register почему-то код не работает
+Shopify.theme.sections.register('alternate-header', {
+    onLoad: function() {
+        console.log('Section loaded:', this);
+        // document.addEventListener("cart:added", cardAddedHeandler);
+    },
+
+    onUnload: function() {
+        console.log('Section unloaded:', this);
+        // document.removeEventListener("cart:added", cardAddedHeandler);
+    },
+
+    onSelect: function() {
+        console.log('Section select:', this);
+    },
+
+    onDeselect: function() {
+        console.log('Section deselect:', this);
+    },
+
+    onBlockSelect: function(event) {
+        console.log('Block select:', event);
+    },
+
+    onBlockDeselect: function(event) {
+        console.log('Block deselect:', event);
+    }
+})

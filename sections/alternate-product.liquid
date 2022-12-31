@@ -3,7 +3,9 @@
 <section class="product" data-section-type="alternate-product" data-section-id="{{section.id}}">
     <div class="product__container container">
         <img class="product__image" src="{{product.featured_image.src | image_url}}" alt="{{product.featured_image.alt}}">
-        <form class="product__form form" action="/form">
+        {%- form "product", product, id: "product-form", class: "product__form form" -%}
+            <input type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}">
+            <input type="hidden" name="sections" value="alternate-header">
             <h1 class="form__heading heading heading--xl">{{product.title}}</h1>
             <p class="form__price"><abbr class="form__price-currency" title="Euro">EUR</abbr> <span class="form__price-value">{{product.price | money_without_currency}}</span></p>
             <p class="form__tax"><small>Tax included</small></p>
@@ -108,7 +110,7 @@
             {%- if product.description != blank -%}
                 <p class="form__info">{{product.description}}</p>
             {%- endif -%}
-        </form>
+        {%- endform -%}
         <div class="accordion">
             <span class="visually-hidden" id="accordion_heading" aria-hidden="true">Additional product information</span>
             <ul class="accordion__list" role="list" aria-labelledby="accordion_heading">

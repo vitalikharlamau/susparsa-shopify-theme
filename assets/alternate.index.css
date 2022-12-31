@@ -29,6 +29,7 @@
     --palette-dull-lavender: #BA9BE5;
     --palette-concrete: #F2F2F2;
     --palette-deep-silver: #BDBDBD;
+    --palette-red: #FF0000;
 
     /*Texts*/
     --text-color-primary: var(--palette-mirage);
@@ -37,6 +38,7 @@
     --text-color-quaternary: var(--palette-deep-koamaru);
     --text-color-complementary-dark: var(--palette-deep-silver);
     --text-color-complementary-light: var(--palette-white);
+    --text-color-error: var(--palette-red);
 
     /*Borders*/
     --border-color: var(--palette-silver);
@@ -49,6 +51,7 @@
     --background-button-light: var(--palette-white);
     --background-button-dark: var(--palette-deep-koamaru);
     --background-quantity-active: var(--palette-concrete);
+    --background-button-disabled: var(--palette-deep-silver);
 
     /*Colors*/
     --color-white: var(--palette-white);
@@ -336,8 +339,19 @@ abbr {
     margin-bottom: 0.75rem;
 }
 
+.form__button:disabled {
+    background-color: var(--background-button-disabled);
+    cursor: not-allowed;
+    border-color: transparent;
+}
+
 .form__button:last-of-type {
     margin-bottom: 3rem;
+}
+
+.form__error {
+    color: var(--text-color-error);
+    margin-bottom: 1rem;
 }
 
 .form__info {

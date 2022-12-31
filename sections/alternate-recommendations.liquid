@@ -2,7 +2,7 @@
     <div class="interesting__container container">
         <h2 class="interesting__heading heading heading--xl">{{section.settings.recommendations_title}}</h2>
         <ul style="grid-template-columns: repeat({{section.settings.quality}}, 1fr);" class="interesting__list" role="list">
-            {%- for item in section.settings.collection.products -%}
+            {%- for item in section.settings.collection.products limit: section.settings.quality -%}
                 <li class="interesting__item">
                     {%- render "alternate-product-card" card: item -%}
                 </li>

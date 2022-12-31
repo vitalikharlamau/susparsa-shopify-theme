@@ -6,18 +6,17 @@ const cardAddedHeandler = (event) => {
     cartCounter.replaceWith(cartCounterUpdated);
 };
 
-document.addEventListener("cart:added", cardAddedHeandler);
-
-// Внутри register почему-то код не работает
 Shopify.theme.sections.register('alternate-header', {
     onLoad: function() {
         console.log('Section loaded:', this);
-        // document.addEventListener("cart:added", cardAddedHeandler);
+
+        document.addEventListener("cart:added", cardAddedHeandler);
     },
 
     onUnload: function() {
         console.log('Section unloaded:', this);
-        // document.removeEventListener("cart:added", cardAddedHeandler);
+
+        document.removeEventListener("cart:added", cardAddedHeandler);
     },
 
     onSelect: function() {

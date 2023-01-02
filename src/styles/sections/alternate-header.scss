@@ -1,0 +1,33 @@
+.header {
+  margin-bottom: 1.21875rem;
+  padding: 1.5rem 0 1.9375rem;
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-navigation__list {
+  list-style: none;
+  display: flex;
+  column-gap: 2.25rem;
+}
+
+.header-navigation__image {
+  display: block;
+  width: 8.6875rem;
+  height: 2rem;
+  object-fit: contain;
+  transition: var(--time-transition-icons) linear;
+}
+
+.header-navigation__image:hover {
+  transform: scale(1.1);
+}
+
+.header-navigation__image:active {
+  transform: scale(1);
+}

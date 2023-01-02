@@ -1,0 +1,28 @@
+.link {
+  text-decoration: underline 0.0625rem transparent;
+  transition: var(--time-transition-link) linear;
+}
+
+.link:hover {
+  text-decoration-color: inherit;
+}
+
+.link:active {
+  color: var(--text-color-quaternary);
+  text-decoration-color: inherit;
+}
+
+.link--xl {
+  color: inherit;
+  letter-spacing: 0.01rem;
+}
+
+.link--lg {
+  color: var(--text-color-secondary);
+  letter-spacing: 0.0625rem;
+}
+
+.link--sm {
+  color: inherit;
+  font-size: 0.75rem;
+}

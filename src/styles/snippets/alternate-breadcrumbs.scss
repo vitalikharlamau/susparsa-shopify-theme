@@ -1,0 +1,29 @@
+.breadcrumbs {
+  margin-bottom: 2.21875rem;
+}
+
+.breadcrumbs-navigation__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+}
+
+.breadcrumbs-navigation__item {
+  position: relative;
+}
+
+.breadcrumbs-navigation__item:not(:last-of-type)::after {
+  content: '/';
+  position: absolute;
+  left: calc(100% + 0.625rem);
+  bottom: 0;
+  color: var(--text-color-tertiary);
+  font-size: 0.875rem;
+  line-height: 1.2143;
+}
+
+.breadcrumbs-navigation__current {
+  color: var(--text-color-tertiary);
+  font-size: 0.75rem;
+}

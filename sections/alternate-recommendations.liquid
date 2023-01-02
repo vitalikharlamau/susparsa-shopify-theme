@@ -1,40 +1,40 @@
-<section class="interesting">
-    <div class="interesting__container container">
-        <h2 class="interesting__heading heading heading--xl">{{section.settings.recommendations_title}}</h2>
-        <ul style="grid-template-columns: repeat({{section.settings.quality}}, 1fr);" class="interesting__list" role="list">
-            {%- for item in section.settings.collection.products limit: section.settings.quality -%}
-                <li class="interesting__item">
-                    {%- render "alternate-product-card" card: item -%}
-                </li>
-            {%- endfor -%}
-        </ul>
-    </div>
+<section class='interesting'>
+  <div class='interesting__container container'>
+    <h2 class='interesting__heading heading heading--xl'>{{ section.settings.recommendations_title }}</h2>
+    <ul style='grid-template-columns: repeat({{section.settings.quality}}, 1fr);' class='interesting__list' role='list'>
+      {%- for item in section.settings.collection.products limit: section.settings.quality -%}
+        <li class='interesting__item'>
+          {%- render 'alternate-product-card', card: item -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
 </section>
 
 {% schema %}
+{
+  "name": "alternate-recommendations",
+  "settings": [
     {
-        "name": "alternate-recommendations",
-        "settings": [
-        {
-            "type": "text",
-            "id": "recommendations_title",
-            "label": "Heading",
-            "default": "Recommendations heading"
-        },
-        {
-            "type": "collection",
-            "id": "collection",
-            "label": "Collection"
-        },
-        {
-            "type": "range",
-            "id": "quality",
-            "min": 3,
-            "max": 6,
-            "step": 1,
-            "label": "Quality products",
-            "default": 4
-        }
-        ]
+      "type": "text",
+      "id": "recommendations_title",
+      "label": "Heading",
+      "default": "Recommendations heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "quality",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Quality products",
+      "default": 4
     }
+  ]
+}
 {% endschema %}

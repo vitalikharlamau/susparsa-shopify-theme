@@ -1,0 +1,42 @@
+.button {
+  appearance: none;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 0.875rem;
+  line-height: 1.2143;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 0.96875rem;
+  cursor: pointer;
+  transition: var(--time-transition-button) linear;
+}
+
+.button:hover {
+  outline: 0.0625rem solid var(--border-color-hover);
+  outline-offset: 0.125rem;
+}
+
+.button--light {
+  color: var(--text-color-primary);
+  background-color: var(--background-button-light);
+  border: 0.0625rem solid var(--border-color);
+}
+
+.button--light:active {
+  outline: none;
+  background-color: var(--border-color);
+}
+
+.button--dark {
+  color: var(--text-color-complementary-light);
+  background-color: var(--background-button-dark);
+  border: 0.0625rem solid var(--background-button-dark);
+}
+
+.button--dark:active {
+  outline: none;
+  opacity: 0.8;
+}

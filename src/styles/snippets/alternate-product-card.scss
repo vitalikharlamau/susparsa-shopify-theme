@@ -1,0 +1,78 @@
+.card {
+  position: relative;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+}
+
+.card__heading {
+  text-align: center;
+  margin-bottom: 0.625rem;
+}
+
+.card__link {
+  letter-spacing: 0;
+}
+
+.card__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.625rem;
+}
+
+.card__color {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.card__color--latte {
+  background-color: var(--color-latte);
+}
+
+.card__color--orange-latte {
+  background-color: var(--color-orange-latte);
+}
+
+.card__color--pink-latte {
+  background-color: var(--color-pink-latte);
+}
+
+.card__color--purple-latte {
+  background-color: var(--color-purple-latte);
+}
+
+.card__price {
+  text-align: center;
+}
+
+.card__tags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags__item {
+  padding: 0.21875rem 0.3125rem;
+  color: var(--text-color-secondary);
+}
+
+.tags__item--sold-out {
+  color: var(--text-color-secondary);
+  background-color: var(--palette-white);
+}

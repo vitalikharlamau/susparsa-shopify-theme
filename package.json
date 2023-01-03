@@ -84,7 +84,16 @@
       "padded-blocks": [
         "error",
         "never"
+      ],
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
       ]
     }
+  },
+  "dependencies": {
+    "@shopify/theme-currency": "^4.1.1"
   }
 }

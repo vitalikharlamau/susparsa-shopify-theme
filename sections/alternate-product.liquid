@@ -1,117 +1,68 @@
-<section class='product' data-section-type='alternate-product' data-section-id='{{section.id}}'>
+<section
+  class='product'
+  data-section-type='alternate-product'
+  data-section-id='{{section.id}}'
+  data-handle='{{product.handle}}'
+  data-money-format='{{shop.money_format}}'
+>
   <div class='product__container container'>
     <img class='product__image' src='{{product.featured_image.src | image_url}}' alt='{{product.featured_image.alt}}'>
     {%- form 'product', product, id: 'product-form', class: 'product__form form' -%}
-      <input type='hidden' name='id' value='{{product.selected_or_first_available_variant.id}}'>
-      <input type='hidden' name='sections' value='alternate-header'>
       <h1 class='form__heading heading heading--xl'>{{ product.title }}</h1>
       <p class='form__price'>
         <abbr class='form__price-currency' title='Euro'>EUR</abbr>
         <span class='form__price-value'>{{ product.price | money_without_currency }}</span>
       </p>
       <p class='form__tax'><small>Tax included</small></p>
-      <fieldset class='form__fildset fieldset'>
-        <legend class='fieldset__title'>Size</legend>
-        <div class='fieldset__group'>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='xs' value='xs' name='size'>
-            <label class='radio__label radio__label--size' for='xs'>
-              <abbr class='radio__size' title='Extra small size'>XS</abbr>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='s' value='s' name='size' checked>
-            <label class='radio__label radio__label--size' for='s'>
-              <abbr class='radio__size' title='Small size'>S</abbr>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='m' value='m' name='size'>
-            <label class='radio__label radio__label--size' for='m'>
-              <abbr class='radio__size' title='Medium size'>M</abbr>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='l' value='l' name='size'>
-            <label class='radio__label radio__label--size' for='l'>
-              <abbr class='radio__size' title='Large size'>L</abbr>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='xl' value='xl' name='size'>
-            <label class='radio__label radio__label--size' for='xl'>
-              <abbr class='radio__size' title='Extra large size'>XL</abbr>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='2xl' value='2xl' name='size' disabled>
-            <label class='radio__label radio__label--size' for='2xl'>
-              <abbr class='radio__size' title='Extra extra large size'>2XL</abbr>
-            </label>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset class='form__fildset fieldset'>
-        <legend class='fieldset__title'>Color - <span class='form__color'>White</span></legend>
-        <div class='fieldset__group'>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='white' value='white' name='color' checked>
-            <label class='radio__label radio__label--color' for='white' data-title='White'>
-              <div class='radio__color radio__color--white'></div>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='black' value='black' name='color'>
-            <label class='radio__label radio__label--color' for='black' data-title='Black'>
-              <div class='radio__color radio__color--black'></div>
-            </label>
-          </div>
-          <div class='radio'>
-            <input class='radio__input visually-hidden' type='radio' id='gray' value='gray' name='color'>
-            <label class='radio__label radio__label--color' for='gray' data-title='Gray'>
-              <div class='radio__color radio__color--gray'></div>
-            </label>
-          </div>
-          <div class='radio'>
-            <input
-              class='radio__input visually-hidden'
-              type='radio'
-              id='purple_latte'
-              value='purple_latte'
-              name='color'
-            >
-            <label class='radio__label radio__label--color' for='purple_latte' data-title='Purple latte'>
-              <div class='radio__color radio__color--purple-latte'></div>
-            </label>
-          </div>
-          <div class='radio'>
-            <input
-              class='radio__input visually-hidden'
-              type='radio'
-              id='pink_latte'
-              value='pink_latte'
-              name='color'
-              disabled
-            >
-            <label class='radio__label radio__label--color' for='pink_latte' data-title='Pink latte'>
-              <div class='radio__color radio__color--pink-latte'></div>
-            </label>
-          </div>
-          <div class='radio'>
-            <input
-              class='radio__input visually-hidden'
-              type='radio'
-              id='orange_latte'
-              value='orange_latte'
-              name='color'
-              disabled
-            >
-            <label class='radio__label radio__label--color' for='orange_latte' data-title='Orange latte'>
-              <div class='radio__color radio__color--orange-latte'></div>
-            </label>
-          </div>
-        </div>
-      </fieldset>
+      {%- for product_option in product.options_with_values -%}
+        {%- if product_option.name == 'Color' -%}
+          <fieldset class='form__fildset fieldset'>
+            <legend class='fieldset__title'>{{ product_option.name }}</legend>
+            <div class='fieldset__group'>
+              {%- for value in product_option.values -%}
+                <div class='radio'>
+                  <input
+                    class='radio__input visually-hidden'
+                    type='radio'
+                    id='{{value}}'
+                    value='{{value}}'
+                    name='options[{{product_option.name}}]'
+                    {%- if product_option.selected_value == value -%}
+                      checked
+                    {%- endif -%}
+                  >
+                  <label class='radio__label radio__label--color' for='{{value}}' data-title='{{value}}'>
+                    <div style='background-color: {{value}}' class='radio__color'></div>
+                  </label>
+                </div>
+              {%- endfor -%}
+            </div>
+          </fieldset>
+        {%- else -%}
+          <fieldset class='form__fildset fieldset'>
+            <legend class='fieldset__title'>{{ product_option.name }}</legend>
+            <div class='fieldset__group'>
+              {%- for value in product_option.values -%}
+                <div class='radio'>
+                  <input
+                    class='radio__input visually-hidden'
+                    type='radio'
+                    id='{{value}}'
+                    value='{{value}}'
+                    name='options[{{product_option.name}}]'
+                    {%- if product_option.selected_value == value -%}
+                      checked
+                    {%- endif -%}
+                  >
+                  <label class='radio__label radio__label--size' for='{{value}}'>
+                    <span class='radio__size'>{{ value }}</span>
+                  </label>
+                </div>
+              {%- endfor -%}
+            </div>
+          </fieldset>
+        {%- endif -%}
+      {%- endfor -%}
       <fieldset class='form__quantity quantity'>
         <legend class='quantity__title'>Quantity</legend>
         <div class='quantity__controls'>
@@ -135,6 +86,7 @@
       {%- if product.description != blank -%}
         <p class='form__info'>{{ product.description }}</p>
       {%- endif -%}
+      <input type='hidden' name='sections' value='alternate-header'>
     {%- endform -%}
     <div class='accordion'>
       <span class='visually-hidden' id='accordion_heading' aria-hidden='true'>Additional product information</span>

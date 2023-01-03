@@ -1,6 +1,6 @@
 import {register} from '@shopify/theme-sections';
 
-const cardAddedHeandler = (event) => {
+const cardAddedHandler = (event) => {
   const header = new DOMParser().parseFromString(
     event.detail.header,
     'text/html',
@@ -15,13 +15,13 @@ register('alternate-header', {
   onLoad: function () {
     console.log('Section loaded:', this);
 
-    document.addEventListener('cart:added', cardAddedHeandler);
+    document.addEventListener('cart:added', cardAddedHandler);
   },
 
   onUnload: function () {
     console.log('Section unloaded:', this);
 
-    document.removeEventListener('cart:added', cardAddedHeandler);
+    document.removeEventListener('cart:added', cardAddedHandler);
   },
 
   onSelect: function () {

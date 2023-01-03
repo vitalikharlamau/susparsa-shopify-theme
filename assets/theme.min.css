@@ -302,10 +302,6 @@ abbr {
   letter-spacing: -0.01125rem;
 }
 
-.form__info:last-of-type {
-  margin-top: 1.375rem;
-}
-
 .fieldset {
   border: none;
 }
@@ -323,7 +319,6 @@ abbr {
 
 .radio__label {
   display: block;
-  width: 2.5rem;
   height: 2.5rem;
   cursor: pointer;
   transition: var(--time-transition-label) linear;
@@ -357,6 +352,7 @@ abbr {
 }
 
 .radio__label--size {
+  padding: 0 0.5rem;
   border: 0.0625rem solid var(--border-color);
   display: flex;
   justify-content: center;
@@ -374,6 +370,7 @@ abbr {
 }
 
 .radio__label--color {
+  width: 2.5rem;
   border: 0.0625rem solid transparent;
   padding: 0.1875rem;
 }
@@ -410,30 +407,6 @@ abbr {
   width: 100%;
   height: 100%;
   border: 0.03125rem solid var(--border-color);
-}
-
-.radio__color--white {
-  background-color: var(--color-white);
-}
-
-.radio__color--black {
-  background-color: var(--color-black);
-}
-
-.radio__color--gray {
-  background-color: var(--color-gray);
-}
-
-.radio__color--purple-latte {
-  background-color: var(--color-purple-latte);
-}
-
-.radio__color--pink-latte {
-  background-color: var(--color-pink-latte);
-}
-
-.radio__color--orange-latte {
-  background-color: var(--color-orange-latte);
 }
 
 .quantity {

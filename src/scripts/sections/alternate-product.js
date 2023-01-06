@@ -38,7 +38,7 @@ register('alternate-product', {
     const buttons = document.querySelectorAll('.form__button');
     const errorMessage = document.querySelector('.form__error');
     const priceValue = document.querySelector('.form__price-value');
-    const money = document.querySelector('#product-form').dataset.moneyFormat;
+    const moneyFormat = document.querySelector('.product').dataset.moneyFormat;
 
     if (errorMessage) {
       errorMessage.remove();
@@ -47,26 +47,25 @@ register('alternate-product', {
     if (!variant) {
       buttons.forEach((button) => {
         button.disabled = true;
-        button.textContent = 'Sold Out';
+        button.textContent = button.dataset.unavailable;
       });
       return;
     } else if (variant && variant.available) {
       buttons.forEach((button) => {
         button.disabled = false;
+        button.textContent = button.dataset.textDefault;
       });
-      buttons[0].textContent = 'Add to cart';
-      buttons[buttons.length - 1].textContent = 'Buy it now';
     } else if (variant && !variant.available) {
       buttons.forEach((button) => {
         button.disabled = true;
-        button.textContent = 'Out of stock';
+        button.textContent = button.dataset.soldOut;
       });
     }
 
     const url = getUrlWithVariant(window.location.href, variant.id);
     window.history.replaceState({path: url}, '', url);
 
-    priceValue.textContent = `${formatMoney(variant.price, money)}`;
+    priceValue.textContent = `${formatMoney(variant.price, moneyFormat)}`;
   },
 
   onFormSubmit: function (event) {
@@ -83,7 +82,10 @@ register('alternate-product', {
         if (response.status === 422) {
           const buttons = document.querySelectorAll('.form__button');
 
-          buttons.forEach((button) => (button.disabled = true));
+          buttons.forEach((button) => {
+            button.disabled = true;
+            button.textContent = response.message;
+          });
 
           buttons[buttons.length - 1].insertAdjacentHTML(
             'afterend',

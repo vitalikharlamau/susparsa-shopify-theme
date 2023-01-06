@@ -1,33 +1,29 @@
 <article class='card'>
   <ul class='card__tags tags' role='list'>
     {%- if card.available == blank -%}
-      <li class='tags__item tags__item--sold-out'>Sold out</li>
+      <li class='tags__item tags__item--sold-out'>{{ 'products.product.sold_out' | t }}</li>
     {%- endif -%}
   </ul>
   <img class='card__image' src='{{card.featured_image.src | image_url}}' alt='{{card.featured_image.alt}}'>
   <h3 class='card__heading heading'>
     <a class='card__link link link--xl' href='{{card.url}}'>{{ card.title }}</a>
   </h3>
-  <ul class='card__list' role='list'>
-    <li class='card__item'>
-      <span class='visually-hidden'>Latte</span>
-      <div class='card__color card__color--latte'></div>
-    </li>
-    <li>
-      <span class='visually-hidden'>Orange latte</span>
-      <div class='card__color card__color--orange-latte'></div>
-    </li>
-    <li>
-      <span class='visually-hidden'>Pink latte</span>
-      <div class='card__color card__color--pink-latte'></div>
-    </li>
-    <li>
-      <span class='visually-hidden'>Purple latte</span>
-      <div class='card__color card__color--purple-latte'></div>
-    </li>
-  </ul>
+  {%- if card.has_only_default_variant == false -%}
+    {%- for card_option in card.options_with_values -%}
+      {%- if card_option.name == 'Color' -%}
+        <ul class='card__list' role='list'>
+          {%- for value in card_option.values -%}
+            <li class='card__item'>
+              <span class='visually-hidden'>{{ value }}</span>
+              <div style='background-color: {{value}}' class='card__color'></div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
   <p class='card__price'>
-    <abbr class='card__price-currency' title='Euro'>EUR</abbr>
-    <span class='card__price-value'>{{ card.price | money_without_currency }}</span>
+    <abbr class='card__price-currency' title='{{shop.currency}}'>{{ shop.currency }}</abbr>
+    <span class='card__price-value'>{{ card.price | money }}</span>
   </p>
 </article>

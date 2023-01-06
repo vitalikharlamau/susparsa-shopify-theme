@@ -10,59 +10,65 @@
     {%- form 'product', product, id: 'product-form', class: 'product__form form' -%}
       <h1 class='form__heading heading heading--xl'>{{ product.title }}</h1>
       <p class='form__price'>
-        <abbr class='form__price-currency' title='Euro'>EUR</abbr>
-        <span class='form__price-value'>{{ product.price | money_without_currency }}</span>
+        <abbr class='form__price-currency' title='{{ shop.currency }}'>{{ shop.currency }}</abbr>
+        <span class='form__price-value'>{{ product.selected_or_first_available_variant.price | money }}</span>
       </p>
-      <p class='form__tax'><small>Tax included</small></p>
-      {%- for product_option in product.options_with_values -%}
-        {%- if product_option.name == 'Color' -%}
-          <fieldset class='form__fildset fieldset'>
-            <legend class='fieldset__title'>{{ product_option.name }}</legend>
-            <div class='fieldset__group'>
-              {%- for value in product_option.values -%}
-                <div class='radio'>
-                  <input
-                    class='radio__input visually-hidden'
-                    type='radio'
-                    id='{{value}}'
-                    value='{{value}}'
-                    name='options[{{product_option.name}}]'
-                    {%- if product_option.selected_value == value -%}
-                      checked
-                    {%- endif -%}
-                  >
-                  <label class='radio__label radio__label--color' for='{{value}}' data-title='{{value}}'>
-                    <div style='background-color: {{value}}' class='radio__color'></div>
-                  </label>
-                </div>
-              {%- endfor -%}
-            </div>
-          </fieldset>
-        {%- else -%}
-          <fieldset class='form__fildset fieldset'>
-            <legend class='fieldset__title'>{{ product_option.name }}</legend>
-            <div class='fieldset__group'>
-              {%- for value in product_option.values -%}
-                <div class='radio'>
-                  <input
-                    class='radio__input visually-hidden'
-                    type='radio'
-                    id='{{value}}'
-                    value='{{value}}'
-                    name='options[{{product_option.name}}]'
-                    {%- if product_option.selected_value == value -%}
-                      checked
-                    {%- endif -%}
-                  >
-                  <label class='radio__label radio__label--size' for='{{value}}'>
-                    <span class='radio__size'>{{ value }}</span>
-                  </label>
-                </div>
-              {%- endfor -%}
-            </div>
-          </fieldset>
-        {%- endif -%}
-      {%- endfor -%}
+      {%- if shop.taxes_included -%}
+        <p class='form__tax'>
+          <small>{{ 'products.product.include_taxes' | t }}</small>
+        </p>
+      {%- endif -%}
+      {%- if product.has_only_default_variant == false -%}
+        {%- for product_option in product.options_with_values -%}
+          {%- if product_option.name == 'Color' -%}
+            <fieldset class='form__fildset fieldset'>
+              <legend class='fieldset__title'>{{ product_option.name }}</legend>
+              <div class='fieldset__group'>
+                {%- for value in product_option.values -%}
+                  <div class='radio'>
+                    <input
+                      class='radio__input visually-hidden'
+                      type='radio'
+                      id='{{value}}'
+                      value='{{value}}'
+                      name='options[{{product_option.name}}]'
+                      {%- if product_option.selected_value == value -%}
+                        checked
+                      {%- endif -%}
+                    >
+                    <label class='radio__label radio__label--color' for='{{value}}' data-title='{{value}}'>
+                      <div style='background-color: {{value}}' class='radio__color'></div>
+                    </label>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- else -%}
+            <fieldset class='form__fildset fieldset'>
+              <legend class='fieldset__title'>{{ product_option.name }}</legend>
+              <div class='fieldset__group'>
+                {%- for value in product_option.values -%}
+                  <div class='radio'>
+                    <input
+                      class='radio__input visually-hidden'
+                      type='radio'
+                      id='{{value}}'
+                      value='{{value}}'
+                      name='options[{{product_option.name}}]'
+                      {%- if product_option.selected_value == value -%}
+                        checked
+                      {%- endif -%}
+                    >
+                    <label class='radio__label radio__label--size' for='{{value}}'>
+                      <span class='radio__size'>{{ value }}</span>
+                    </label>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
       <fieldset class='form__quantity quantity'>
         <legend class='quantity__title'>Quantity</legend>
         <div class='quantity__controls'>
@@ -77,11 +83,39 @@
           </button>
         </div>
       </fieldset>
-      <button class='form__button button button--light' type='submit' value='add'>
-        {{ 'products.product.add_to_cart' | t }}
+      <button
+        class='form__button button button--light'
+        type='submit'
+        value='add'
+        data-text-default='{{ 'products.product.add_to_cart' | t }}'
+        data-sold-out='{{ 'products.product.sold_out' | t }}'
+        data-unavailable='{{ 'products.product.unavailable' | t }}'
+        {% if product.selected_or_first_available_variant.available == false %}
+          disabled
+        {% endif %}
+      >
+        {%- if product.selected_or_first_available_variant.available -%}
+          {{ 'products.product.add_to_cart' | t }}
+        {%- else -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- endif -%}
       </button>
-      <button class='form__button button button--dark' type='submit' value='buy'>
-        {{ 'products.product.buy_it_now' | t }}
+      <button
+        class='form__button button button--dark'
+        type='submit'
+        value='buy'
+        data-text-default='{{ 'products.product.buy_it_now' | t }}'
+        data-sold-out='{{ 'products.product.sold_out' | t }}'
+        data-unavailable='{{ 'products.product.unavailable' | t }}'
+        {% if product.selected_or_first_available_variant.available == false %}
+          disabled
+        {% endif %}
+      >
+        {%- if product.selected_or_first_available_variant.available -%}
+          {{ 'products.product.buy_it_now' | t }}
+        {%- else -%}
+          {{ 'products.product.sold_out' | t }}
+        {%- endif -%}
       </button>
       {%- if product.description != blank -%}
         <p class='form__info'>{{ product.description }}</p>

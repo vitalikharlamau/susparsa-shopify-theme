@@ -22,6 +22,7 @@ export class Accordion {
   }
 
   toggle() {
+    // eslint-disable-next-line @babel/no-unused-expressions
     this.state === STATES.HIDE ? this.show() : this.hide();
   }
 

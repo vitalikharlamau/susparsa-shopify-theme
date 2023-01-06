@@ -3,7 +3,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url(../assets/AvenirNextRoundedStd-Reg.woff2) format('woff2');
+  src: url('../assets/AvenirNextRoundedStd-Reg.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,27 +11,27 @@
   font-style: normal;
   font-display: swap;
   font-weight: 500;
-  src: url(../assets/AvenirNextRoundedStd-Med.woff2) format('woff2');
+  src: url('../assets/AvenirNextRoundedStd-Med.woff2') format('woff2');
 }
 
 :root {
-  /*Palette*/
-  --palette-mirage: #1a1f29;
-  --palette-shuttle-gray: #5e626b;
-  --palette-manatee: #929499;
-  --palette-deep-koamaru: #171c8f;
-  --palette-silver: #cccccc;
-  --palette-white: #ffffff;
-  --palette-bombay: #aeaeb0;
-  --palette-antique-brass: #c88252;
-  --palette-apricot-peach: #f8cab1;
-  --palette-sea-pink: #e9a0a7;
-  --palette-dull-lavender: #ba9be5;
-  --palette-concrete: #f2f2f2;
-  --palette-deep-silver: #bdbdbd;
-  --palette-red: #ff0000;
+  /* Palette */
+  --palette-mirage: rgb(26, 31, 41);
+  --palette-shuttle-gray: rgb(94, 98, 107);
+  --palette-manatee: rgb(146, 148, 153);
+  --palette-deep-koamaru: rgb(23, 28, 143);
+  --palette-silver: rgb(204, 204, 204);
+  --palette-white: rgb(255, 255, 255);
+  --palette-bombay: rgb(174, 174, 176);
+  --palette-antique-brass: rgb(200, 130, 82);
+  --palette-apricot-peach: rgb(248, 202, 177);
+  --palette-sea-pink: rgb(233, 160, 167);
+  --palette-dull-lavender: rgb(186, 155, 229);
+  --palette-concrete: rgb(242, 242, 242);
+  --palette-deep-silver: rgb(189, 189, 189);
+  --palette-red: rgb(255, 0, 0);
 
-  /*Texts*/
+  /* Texts */
   --text-color-primary: var(--palette-mirage);
   --text-color-secondary: var(--palette-shuttle-gray);
   --text-color-tertiary: var(--palette-manatee);
@@ -40,12 +40,12 @@
   --text-color-complementary-light: var(--palette-white);
   --text-color-error: var(--palette-red);
 
-  /*Borders*/
+  /* Borders */
   --border-color: var(--palette-silver);
   --border-color-input-checked: var(--palette-mirage);
   --border-color-hover: var(--palette-mirage);
 
-  /*Backgrounds*/
+  /* Backgrounds */
   --background-input-disabled: var(--palette-concrete);
   --background-input-hover: var(--palette-white);
   --background-button-light: var(--palette-white);
@@ -53,7 +53,7 @@
   --background-quantity-active: var(--palette-concrete);
   --background-button-disabled: var(--palette-deep-silver);
 
-  /*Colors*/
+  /* Colors */
   --color-white: var(--palette-white);
   --color-black: var(--palette-mirage);
   --color-gray: var(--palette-bombay);
@@ -62,7 +62,7 @@
   --color-pink-latte: var(--palette-sea-pink);
   --color-purple-latte: var(--palette-dull-lavender);
 
-  /*Times*/
+  /* Times */
   --time-transition-link: 0.3s;
   --time-transition-icons: 0.15s;
   --time-transition-label: 0.3s;
@@ -106,14 +106,14 @@ abbr {
   padding: 0 1.25rem;
 }
 
-@import './library/links.scss';
-@import './library/headings.scss';
-@import './library/buttons.scss';
+@import './library/links';
+@import './library/headings';
+@import './library/buttons';
 
-@import './sections/alternate-header.scss';
-@import './sections/alternate-product.scss';
-@import './sections/alternate-recommendations.scss';
-@import './sections/alternate-footer.scss';
+@import './sections/alternate-header';
+@import './sections/alternate-product';
+@import './sections/alternate-recommendations';
+@import './sections/alternate-footer';
 
-@import './snippets/alternate-breadcrumbs.scss';
-@import './snippets/alternate-product-card.scss';
+@import './snippets/alternate-breadcrumbs';
+@import './snippets/alternate-product-card';

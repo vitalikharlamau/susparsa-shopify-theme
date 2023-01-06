@@ -1,14 +1,11 @@
 import {register} from '@shopify/theme-sections';
 import {ProductForm, getUrlWithVariant} from '@shopify/theme-product-form';
-
 import {formatMoney} from '@shopify/theme-currency';
 
 import {Accordion, CLASSES} from '../library/accordion';
 
 register('alternate-product', {
-  onLoad: function () {
-    console.log('Section loaded:', this);
-
+  onLoad() {
     this.accordions = Array.from(
       this.container.querySelectorAll(`.${CLASSES.ACCORDION}`),
     ).map((accordion) => new Accordion(accordion));
@@ -24,16 +21,16 @@ register('alternate-product', {
           onOptionChange: this.onOptionChange,
           onFormSubmit: this.onFormSubmit,
         });
-      });
+      })
+      // eslint-disable-next-line no-console
+      .catch(console.error);
   },
 
-  onUnload: function () {
-    console.log('Section unloaded:', this);
-
+  onUnload() {
     this.productForm.destroy();
   },
 
-  onOptionChange: function (event) {
+  onOptionChange(event) {
     const variant = event.dataset.variant;
     const buttons = document.querySelectorAll('.form__button');
     const errorMessage = document.querySelector('.form__error');
@@ -68,9 +65,9 @@ register('alternate-product', {
     priceValue.textContent = `${formatMoney(variant.price, moneyFormat)}`;
   },
 
-  onFormSubmit: function (event) {
+  onFormSubmit(event) {
     event.preventDefault();
-    fetch(event.target.action + '.js', {
+    fetch(`${event.target.action}.js`, {
       method: event.target.method,
       body: new FormData(event.target),
       headers: {
@@ -101,29 +98,18 @@ register('alternate-product', {
           event.target.dispatchEvent(customEvent);
         }
       })
+      // eslint-disable-next-line no-console
       .catch(console.error);
   },
 
-  onSelect: function () {
-    console.log('Section select:', this);
-  },
-
-  onDeselect: function () {
-    console.log('Section deselect:', this);
-  },
-
-  onBlockSelect: function (event) {
-    console.log('Block select:', event);
-
+  onBlockSelect(event) {
     this.currentAccordion = this.accordions.find(
       (current) => current.accordion.id === event.target.id,
     );
     this.currentAccordion.show();
   },
 
-  onBlockDeselect: function (event) {
-    console.log('Block deselect:', event);
-
+  onBlockDeselect() {
     this.currentAccordion.hide();
   },
 });

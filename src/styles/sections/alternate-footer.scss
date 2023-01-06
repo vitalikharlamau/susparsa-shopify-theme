@@ -1,82 +1,86 @@
 .footer {
   padding: 5rem 0 2.0625rem;
   border-top: 0.0625rem solid var(--border-color);
+
+  &__container {
+    max-width: 81.5rem;
+  }
+
+  &__wrapper {
+    margin-bottom: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 9.75rem;
+    row-gap: 1.25rem;
+  }
+
+  &__company-info {
+    color: var(--text-color-secondary);
+  }
+
+  &__copyright {
+    font-size: inherit;
+  }
 }
 
-.footer__container {
-  max-width: 81.5rem;
+.footer-info {
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__contacts {
+    font-style: inherit;
+  }
+
+  &__name-compamy {
+    color: var(--text-color-secondary);
+    letter-spacing: 0.0625rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__address {
+    color: var(--text-color-secondary);
+    letter-spacing: 0.0625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__image {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    transition: var(--time-transition-icons) linear;
+  }
+
+  &__image:hover {
+    transform: scale(1.2);
+  }
+
+  &__image:active {
+    transform: scale(0.8);
+  }
 }
 
-.footer__wrapper {
-  margin-bottom: 6rem;
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 9.75rem;
-  row-gap: 1.25rem;
-}
+.footer-navigation {
+  &__heading {
+    margin-bottom: 2rem;
+  }
 
-.footer-info__heading {
-  margin-bottom: 2rem;
-}
-
-.footer-info__contacts {
-  font-style: inherit;
-}
-
-.footer-info__name-compamy {
-  color: var(--text-color-secondary);
-  letter-spacing: 0.0625rem;
-  margin-bottom: 0.75rem;
-}
-
-.footer-info__address {
-  color: var(--text-color-secondary);
-  letter-spacing: 0.0625rem;
-  margin-bottom: 1.25rem;
-}
-
-.footer-info__list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-info__link {
-  text-decoration: none;
-}
-
-.footer-info__image {
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
-  transition: var(--time-transition-icons) linear;
-}
-
-.footer-info__image:hover {
-  transform: scale(1.2);
-}
-
-.footer-info__image:active {
-  transform: scale(0.8);
-}
-
-.footer-navigation__heading {
-  margin-bottom: 2rem;
-}
-
-.footer-navigation__list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.75rem;
-}
-
-.footer__company-info {
-  color: var(--text-color-secondary);
-}
-
-.footer__copyright {
-  font-size: inherit;
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+  }
 }

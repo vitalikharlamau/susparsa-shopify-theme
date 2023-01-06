@@ -1,20 +1,20 @@
 .interesting {
   margin-bottom: 6.8125rem;
-}
 
-.interesting__container {
-  max-width: 76.5rem;
-}
+  &__container {
+    max-width: 76.5rem;
+  }
 
-.interesting__heading {
-  color: var(--text-color-quaternary);
-  text-align: center;
-  margin-bottom: 4rem;
-}
+  &__heading {
+    color: var(--text-color-quaternary);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
 
-.interesting__list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+  }
 }

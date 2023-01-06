@@ -12,31 +12,11 @@ const cardAddedHandler = (event) => {
 };
 
 register('alternate-header', {
-  onLoad: function () {
-    console.log('Section loaded:', this);
-
+  onLoad() {
     document.addEventListener('cart:added', cardAddedHandler);
   },
 
-  onUnload: function () {
-    console.log('Section unloaded:', this);
-
+  onUnload() {
     document.removeEventListener('cart:added', cardAddedHandler);
-  },
-
-  onSelect: function () {
-    console.log('Section select:', this);
-  },
-
-  onDeselect: function () {
-    console.log('Section deselect:', this);
-  },
-
-  onBlockSelect: function (event) {
-    console.log('Block select:', event);
-  },
-
-  onBlockDeselect: function (event) {
-    console.log('Block deselect:', event);
   },
 });

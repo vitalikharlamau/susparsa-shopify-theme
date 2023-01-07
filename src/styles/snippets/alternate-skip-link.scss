@@ -1,0 +1,14 @@
+.skip-link {
+  text-decoration: none;
+  color: var(--text-color-primary);
+  background-color: var(--background-skip-link);
+  position: absolute;
+  margin: 0;
+  transform: translateY(-100%);
+  transition: var(--time-transition-link) linear;
+
+  &:focus {
+    margin: 0.5rem;
+    transform: translateY(0%);
+  }
+}

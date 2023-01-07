@@ -1,5 +1,6 @@
 <section
   class='product'
+  aria-labelledby='product_heading'
   data-section-type='alternate-product'
   data-section-id='{{section.id}}'
   data-handle='{{product.handle}}'
@@ -8,21 +9,22 @@
   <div class='product__container container'>
     <img class='product__image' src='{{product.featured_image.src | image_url}}' alt='{{product.featured_image.alt}}'>
     {%- form 'product', product, id: 'product-form', class: 'product__form form' -%}
-      <h1 class='form__heading heading heading--xl'>{{ product.title }}</h1>
+      <h1 class='form__heading heading heading--xl' id='product_heading'>{{- product.title -}}</h1>
       <p class='form__price'>
-        <abbr class='form__price-currency' title='{{ shop.currency }}'>{{ shop.currency }}</abbr>
-        <span class='form__price-value'>{{ product.selected_or_first_available_variant.price | money }}</span>
+        <span class='visually-hidden'>{{- 'customer.order.price' | t -}}</span>
+        <abbr class='form__price-currency' title='{{shop.currency}}'>{{- shop.currency -}}</abbr>
+        <span class='form__price-value'>{{- product.selected_or_first_available_variant.price | money -}}</span>
       </p>
       {%- if shop.taxes_included -%}
         <p class='form__tax'>
-          <small>{{ 'products.product.include_taxes' | t }}</small>
+          <small>{{- 'products.product.include_taxes' | t -}}</small>
         </p>
       {%- endif -%}
       {%- if product.has_only_default_variant == false -%}
         {%- for product_option in product.options_with_values -%}
           {%- if product_option.name == 'Color' -%}
             <fieldset class='form__fildset fieldset'>
-              <legend class='fieldset__title'>{{ product_option.name }}</legend>
+              <legend class='fieldset__title'>{{- product_option.name -}}</legend>
               <div class='fieldset__group'>
                 {%- for value in product_option.values -%}
                   <div class='radio'>
@@ -37,7 +39,7 @@
                       {%- endif -%}
                     >
                     <label class='radio__label radio__label--color' for='{{value}}' data-title='{{value}}'>
-                      <div style='background-color: {{value}}' class='radio__color'></div>
+                      <span style='background-color: {{value}}' class='radio__color'></span>
                     </label>
                   </div>
                 {%- endfor -%}
@@ -45,7 +47,7 @@
             </fieldset>
           {%- else -%}
             <fieldset class='form__fildset fieldset'>
-              <legend class='fieldset__title'>{{ product_option.name }}</legend>
+              <legend class='fieldset__title'>{{- product_option.name -}}</legend>
               <div class='fieldset__group'>
                 {%- for value in product_option.values -%}
                   <div class='radio'>
@@ -60,7 +62,7 @@
                       {%- endif -%}
                     >
                     <label class='radio__label radio__label--size' for='{{value}}'>
-                      <span class='radio__size'>{{ value }}</span>
+                      <span class='radio__size'>{{- value -}}</span>
                     </label>
                   </div>
                 {%- endfor -%}
@@ -70,16 +72,16 @@
         {%- endfor -%}
       {%- endif -%}
       <fieldset class='form__quantity quantity'>
-        <legend class='quantity__title'>Quantity</legend>
+        <legend class='quantity__title'>{{- 'products.product.quantity.label' | t -}}</legend>
         <div class='quantity__controls'>
           <input class='quantity__input' type='number' min='1' max='999' step='1' value='1'>
           <button class='quantity__button quantity__button--increase' type='button'>
-            <span class='visually-hidden'>Increase quantity</span>
-            -
+            <span class='visually-hidden'>{{- 'products.product.quantity.decrease' | t -}}</span>
+            <span class='quantity__button-symbol' aria-hidden='true'>-</span>
           </button>
           <button class='quantity__button quantity__button--decrease' type='button'>
-            <span class='visually-hidden'>Decrease quantity</span>
-            +
+            <span class='visually-hidden'>{{- 'products.product.quantity.increase' | t -}}</span>
+            <span class='quantity__button-symbol' aria-hidden='true'>+</span>
           </button>
         </div>
       </fieldset>
@@ -87,43 +89,45 @@
         class='form__button button button--light'
         type='submit'
         value='add'
-        data-text-default='{{ 'products.product.add_to_cart' | t }}'
-        data-sold-out='{{ 'products.product.sold_out' | t }}'
-        data-unavailable='{{ 'products.product.unavailable' | t }}'
-        {% if product.selected_or_first_available_variant.available == false %}
+        data-text-default='{{'products.product.add_to_cart' | t}}'
+        data-sold-out='{{'products.product.sold_out' | t}}'
+        data-unavailable='{{'products.product.unavailable' | t}}'
+        {%- if product.selected_or_first_available_variant.available == false -%}
           disabled
-        {% endif %}
+        {%- endif -%}
       >
         {%- if product.selected_or_first_available_variant.available -%}
-          {{ 'products.product.add_to_cart' | t }}
+          {{- 'products.product.add_to_cart' | t -}}
         {%- else -%}
-          {{ 'products.product.sold_out' | t }}
+          {{- 'products.product.sold_out' | t -}}
         {%- endif -%}
       </button>
       <button
         class='form__button button button--dark'
         type='submit'
         value='buy'
-        data-text-default='{{ 'products.product.buy_it_now' | t }}'
-        data-sold-out='{{ 'products.product.sold_out' | t }}'
-        data-unavailable='{{ 'products.product.unavailable' | t }}'
-        {% if product.selected_or_first_available_variant.available == false %}
+        data-text-default='{{'products.product.buy_it_now' | t}}'
+        data-sold-out='{{'products.product.sold_out' | t}}'
+        data-unavailable='{{'products.product.unavailable' | t}}'
+        {%- if product.selected_or_first_available_variant.available == false -%}
           disabled
-        {% endif %}
+        {%- endif -%}
       >
         {%- if product.selected_or_first_available_variant.available -%}
-          {{ 'products.product.buy_it_now' | t }}
+          {{- 'products.product.buy_it_now' | t -}}
         {%- else -%}
-          {{ 'products.product.sold_out' | t }}
+          {{- 'products.product.sold_out' | t -}}
         {%- endif -%}
       </button>
       {%- if product.description != blank -%}
-        <p class='form__info'>{{ product.description }}</p>
+        <p class='form__info'>{{- product.description -}}</p>
       {%- endif -%}
       <input type='hidden' name='sections' value='alternate-header'>
     {%- endform -%}
     <div class='accordion'>
-      <span class='visually-hidden' id='accordion_heading' aria-hidden='true'>Additional product information</span>
+      <span class='visually-hidden' id='accordion_heading' aria-hidden='true'>
+        {{- 'custom_names.additional_information' | t -}}
+      </span>
       <ul class='accordion__list' role='list' aria-labelledby='accordion_heading'>
         {%- assign ID = 0 -%}
         {%- for accordion in section.blocks -%}
@@ -132,21 +136,21 @@
             <li class='accordion__item' id='{{accordion.id}}' {{ accordion.shopify_attributes }}>
               <button
                 class='accordion__button'
-                id='accordion_button{{ID}}'
+                id='accordion_button_{{ID}}'
                 type='button'
                 aria-expanded='false'
-                aria-controls='accordion_content{{ID}}'
+                aria-controls='accordion_content_{{ID}}'
               >
-                {{ accordion.settings.accordion_title }}
+                {{- accordion.settings.accordion_title -}}
               </button>
               <div
                 class='accordion__content'
-                id='accordion_content{{ID}}'
+                id='accordion_content_{{ID}}'
                 aria-hidden='true'
-                aria-labelledby='accordion_button{{ID}}'
+                aria-labelledby='accordion_button_{{ID}}'
                 role='region'
               >
-                <p class='accordion__text'>{{ accordion.settings.accordion_text }}</p>
+                <p class='accordion__text'>{{- accordion.settings.accordion_text -}}</p>
               </div>
             </li>
           {%- endif -%}

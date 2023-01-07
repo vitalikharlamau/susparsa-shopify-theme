@@ -1,6 +1,10 @@
-<section class='interesting'>
+<section class='interesting' aria-labelledby='interesting_heading'>
+  <span class='visually-hidden' id='tags_heading' aria-hidden='true'>Product tags</span>
+  <span class='visually-hidden' id='colors_heading' aria-hidden='true'>Available colors</span>
   <div class='interesting__container container'>
-    <h2 class='interesting__heading heading heading--xl'>{{ section.settings.recommendations_title }}</h2>
+    <h2 class='interesting__heading heading heading--xl' id='interesting_heading'>
+      {{- section.settings.recommendations_title -}}
+    </h2>
     <ul style='grid-template-columns: repeat({{section.settings.quality}}, 1fr);' class='interesting__list' role='list'>
       {%- for item in section.settings.collection.products limit: section.settings.quality -%}
         <li class='interesting__item'>

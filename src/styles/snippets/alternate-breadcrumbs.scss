@@ -15,13 +15,15 @@
   }
 
   &__item:not(:last-of-type)::after {
-    content: '/';
+    content: '';
     position: absolute;
-    left: calc(100% + 0.625rem);
     bottom: 0;
-    color: var(--text-color-tertiary);
-    font-size: 0.875rem;
-    line-height: 1.2143;
+    left: calc(100% + 0.625rem);
+    display: block;
+    height: 0.75rem;
+    border-right: 0.0625rem solid var(--text-color-tertiary);
+    border-radius: 0.3125rem;
+    transform: rotate(20deg) translateY(-20%);
   }
 
   &__current {

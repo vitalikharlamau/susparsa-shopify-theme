@@ -52,6 +52,7 @@
   --background-button-dark: var(--palette-deep-koamaru);
   --background-quantity-active: var(--palette-concrete);
   --background-button-disabled: var(--palette-deep-silver);
+  --background-skip-link: var(--palette-silver);
 
   /* Colors */
   --color-white: var(--palette-white);
@@ -117,3 +118,4 @@ abbr {
 
 @import './snippets/alternate-breadcrumbs';
 @import './snippets/alternate-product-card';
+@import './snippets/alternate-skip-link';

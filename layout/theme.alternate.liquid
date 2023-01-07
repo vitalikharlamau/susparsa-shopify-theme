@@ -8,12 +8,16 @@
   <script src='{{ 'theme.min.js' | asset_url }}' defer></script>
 
   <body>
+    {% render 'alternate-skip-link' %}
+
     {% section 'alternate-header' %}
 
-    <main class='main'>
+    <main class='main' id="main">
+
       {% render 'alternate-breadcrumbs' %}
 
       {{ content_for_layout }}
+
     </main>
 
     {% section 'alternate-footer' %}

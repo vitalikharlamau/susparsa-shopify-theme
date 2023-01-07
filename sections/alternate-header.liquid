@@ -1,19 +1,19 @@
 <header class='header' data-section-type='alternate-header' data-section-id='{{section.id}}'>
   <div class='header__container container'>
-    <nav class='header-navigation'>
+    <nav class='header-navigation' aria-label='Menu'>
       {%- if section.settings.menu != blank -%}
         <ul class='header-navigation__list' role='list'>
           {%- for link in section.settings.menu.links -%}
             <li class='header-navigation__item'>
-              <a class='header-navigation__link link link--xl' href='{{link.url}}'>{{ link.title }}</a>
+              <a class='header-navigation__link link link--xl' href='{{link.url}}'>{{- link.title -}}</a>
             </li>
           {%- endfor -%}
         </ul>
       {%- endif -%}
       <a href='{{routes.root_url}}' class='header-navigation__logo'>
-        <span class='visually-hidden'>Homepage</span>
+        <span class='visually-hidden'>{{- 'custom_names.homepage' | t -}}</span>
         {%- if section.settings.logo != blank -%}
-          <img class='header-navigation__image' src='{{section.settings.logo | image_url}}' alt='Logo'>
+          <img class='header-navigation__image' src='{{section.settings.logo | image_url}}' alt='' role='presentation'>
         {%- endif -%}
       </a>
       <ul class='header-navigation__list' role='list'>
@@ -29,8 +29,9 @@
         </li>
         <li class='header-navigation__item'>
           <a class='header-navigation__link link link--xl' href='{{routes.cart_url}}'>
-            {{- 'templates.cart.cart' | t }} (<span id='cart_counter'>{{ cart.item_count }}</span>)</a
-          >
+            {{- 'templates.cart.cart' | t }} (<span id='cart_counter'>{{- cart.item_count -}}</span
+            ><span class='visually-hidden'>{{- 'custom_names.items_inside' | t -}}</span>)
+          </a>
         </li>
       </ul>
     </nav>

@@ -11,28 +11,28 @@
   border-radius: 0;
   padding: 0.96875rem;
   cursor: pointer;
-  transition: var(--time-transition-button) linear;
+  transition: $time-transition-button linear;
 
   &:hover {
-    outline: 0.0625rem solid var(--border-color-hover);
+    outline: 0.0625rem solid $border-color-hover;
     outline-offset: 0.125rem;
   }
 
   &--light {
-    color: var(--text-color-primary);
-    background-color: var(--background-button-light);
-    border: 0.0625rem solid var(--border-color);
+    color: $text-color-primary;
+    background-color: $background-button-light;
+    border: 0.0625rem solid $border-color;
   }
 
   &--light:active {
     outline: none;
-    background-color: var(--border-color);
+    background-color: $border-color;
   }
 
   &--dark {
-    color: var(--text-color-complementary-light);
-    background-color: var(--background-button-dark);
-    border: 0.0625rem solid var(--background-button-dark);
+    color: $text-color-complementary-light;
+    background-color: $background-button-dark;
+    border: 0.0625rem solid $background-button-dark;
   }
 
   &--dark:active {

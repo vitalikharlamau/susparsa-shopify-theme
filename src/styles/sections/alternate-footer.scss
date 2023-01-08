@@ -1,6 +1,6 @@
 .footer {
   padding: 5rem 0 2.0625rem;
-  border-top: 0.0625rem solid var(--border-color);
+  border-top: 0.0625rem solid $border-color;
 
   &__container {
     max-width: 81.5rem;
@@ -15,7 +15,7 @@
   }
 
   &__company-info {
-    color: var(--text-color-secondary);
+    color: $text-color-secondary;
   }
 
   &__copyright {
@@ -33,13 +33,13 @@
   }
 
   &__name-compamy {
-    color: var(--text-color-secondary);
+    color: $text-color-secondary;
     letter-spacing: 0.0625rem;
     margin-bottom: 0.75rem;
   }
 
   &__address {
-    color: var(--text-color-secondary);
+    color: $text-color-secondary;
     letter-spacing: 0.0625rem;
     margin-bottom: 1.25rem;
   }
@@ -60,7 +60,7 @@
     width: 1.5rem;
     height: 1.5rem;
     object-fit: contain;
-    transition: var(--time-transition-icons) linear;
+    transition: $time-transition-icons linear;
   }
 
   &__image:hover {

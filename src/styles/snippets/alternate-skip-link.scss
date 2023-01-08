@@ -1,11 +1,11 @@
 .skip-link {
   text-decoration: none;
-  color: var(--text-color-primary);
-  background-color: var(--background-skip-link);
+  color: $text-color-primary;
+  background-color: $background-skip-link;
   position: absolute;
   margin: 0;
   transform: translateY(-100%);
-  transition: var(--time-transition-link) linear;
+  transition: $time-transition-link linear;
 
   &:focus {
     margin: 0.5rem;

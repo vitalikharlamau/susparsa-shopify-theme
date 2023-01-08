@@ -1,7 +1,7 @@
 .header {
   margin-bottom: 1.21875rem;
   padding: 1.5rem 0 1.9375rem;
-  border-bottom: 0.0625rem solid var(--border-color);
+  border-bottom: 0.0625rem solid $border-color;
 }
 
 .header-navigation {
@@ -20,7 +20,7 @@
     width: 8.6875rem;
     height: 2rem;
     object-fit: contain;
-    transition: var(--time-transition-icons) linear;
+    transition: $time-transition-icons linear;
   }
 
   &__image:hover {

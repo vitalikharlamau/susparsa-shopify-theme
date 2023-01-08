@@ -14,62 +14,60 @@
   src: url('../assets/AvenirNextRoundedStd-Med.woff2') format('woff2');
 }
 
-:root {
-  /* Palette */
-  --palette-mirage: rgb(26, 31, 41);
-  --palette-shuttle-gray: rgb(94, 98, 107);
-  --palette-manatee: rgb(146, 148, 153);
-  --palette-deep-koamaru: rgb(23, 28, 143);
-  --palette-silver: rgb(204, 204, 204);
-  --palette-white: rgb(255, 255, 255);
-  --palette-bombay: rgb(174, 174, 176);
-  --palette-antique-brass: rgb(200, 130, 82);
-  --palette-apricot-peach: rgb(248, 202, 177);
-  --palette-sea-pink: rgb(233, 160, 167);
-  --palette-dull-lavender: rgb(186, 155, 229);
-  --palette-concrete: rgb(242, 242, 242);
-  --palette-deep-silver: rgb(189, 189, 189);
-  --palette-red: rgb(255, 0, 0);
+/* Palette */
+$palette-mirage: rgb(26, 31, 41);
+$palette-shuttle-gray: rgb(94, 98, 107);
+$palette-manatee: rgb(146, 148, 153);
+$palette-deep-koamaru: rgb(23, 28, 143);
+$palette-silver: rgb(204, 204, 204);
+$palette-white: rgb(255, 255, 255);
+$palette-bombay: rgb(174, 174, 176);
+$palette-antique-brass: rgb(200, 130, 82);
+$palette-apricot-peach: rgb(248, 202, 177);
+$palette-sea-pink: rgb(233, 160, 167);
+$palette-dull-lavender: rgb(186, 155, 229);
+$palette-concrete: rgb(242, 242, 242);
+$palette-deep-silver: rgb(189, 189, 189);
+$palette-red: rgb(255, 0, 0);
 
-  /* Texts */
-  --text-color-primary: var(--palette-mirage);
-  --text-color-secondary: var(--palette-shuttle-gray);
-  --text-color-tertiary: var(--palette-manatee);
-  --text-color-quaternary: var(--palette-deep-koamaru);
-  --text-color-complementary-dark: var(--palette-deep-silver);
-  --text-color-complementary-light: var(--palette-white);
-  --text-color-error: var(--palette-red);
+/* Texts */
+$text-color-primary: $palette-mirage;
+$text-color-secondary: $palette-shuttle-gray;
+$text-color-tertiary: $palette-manatee;
+$text-color-quaternary: $palette-deep-koamaru;
+$text-color-complementary-dark: $palette-deep-silver;
+$text-color-complementary-light: $palette-white;
+$text-color-error: $palette-red;
 
-  /* Borders */
-  --border-color: var(--palette-silver);
-  --border-color-input-checked: var(--palette-mirage);
-  --border-color-hover: var(--palette-mirage);
+/* Borders */
+$border-color: $palette-silver;
+$border-color-input-checked: $palette-mirage;
+$border-color-hover: $palette-mirage;
 
-  /* Backgrounds */
-  --background-input-disabled: var(--palette-concrete);
-  --background-input-hover: var(--palette-white);
-  --background-button-light: var(--palette-white);
-  --background-button-dark: var(--palette-deep-koamaru);
-  --background-quantity-active: var(--palette-concrete);
-  --background-button-disabled: var(--palette-deep-silver);
-  --background-skip-link: var(--palette-silver);
+/* Backgrounds */
+$background-input-disabled: $palette-concrete;
+$background-input-hover: $palette-white;
+$background-button-light: $palette-white;
+$background-button-dark: $palette-deep-koamaru;
+$background-quantity-active: $palette-concrete;
+$background-button-disabled: $palette-deep-silver;
+$background-skip-link: $palette-silver;
 
-  /* Colors */
-  --color-white: var(--palette-white);
-  --color-black: var(--palette-mirage);
-  --color-gray: var(--palette-bombay);
-  --color-latte: var(--palette-antique-brass);
-  --color-orange-latte: var(--palette-apricot-peach);
-  --color-pink-latte: var(--palette-sea-pink);
-  --color-purple-latte: var(--palette-dull-lavender);
+/* Colors */
+$color-white: $palette-white;
+$color-black: $palette-mirage;
+$color-gray: $palette-bombay;
+$color-latte: $palette-antique-brass;
+$color-orange-latte: $palette-apricot-peach;
+$color-pink-latte: $palette-sea-pink;
+$color-purple-latte: $palette-dull-lavender;
 
-  /* Times */
-  --time-transition-link: 0.3s;
-  --time-transition-icons: 0.15s;
-  --time-transition-label: 0.3s;
-  --time-transition-button: 0.2s;
-  --time-accordion-animation: 0.25s;
-}
+/* Times */
+$time-transition-link: 0.3s;
+$time-transition-icons: 0.15s;
+$time-transition-label: 0.3s;
+$time-transition-button: 0.2s;
+$time-accordion-animation: 0.25s;
 
 *,
 *::before,
@@ -82,7 +80,7 @@
 body {
   font-family: 'Avenir Next Rounded Std', sans-serif;
   line-height: 1.25;
-  color: var(--text-color-primary);
+  color: $text-color-primary;
 }
 
 abbr {

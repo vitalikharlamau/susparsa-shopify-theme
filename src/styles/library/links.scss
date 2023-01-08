@@ -1,13 +1,13 @@
 .link {
   text-decoration: underline 0.0625rem transparent;
-  transition: var(--time-transition-link) linear;
+  transition: $time-transition-link linear;
 
   &:hover {
     text-decoration-color: inherit;
   }
 
   &:active {
-    color: var(--text-color-quaternary);
+    color: $text-color-quaternary;
     text-decoration-color: inherit;
   }
 
@@ -17,7 +17,7 @@
   }
 
   &--lg {
-    color: var(--text-color-secondary);
+    color: $text-color-secondary;
     letter-spacing: 0.0625rem;
   }
 

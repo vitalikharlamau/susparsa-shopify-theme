@@ -7,7 +7,11 @@
   data-money-format='{{shop.money_format}}'
 >
   <div class='product__container container'>
-    <img class='product__image' src='{{product.featured_image.src | image_url}}' alt='{{product.featured_image.alt}}'>
+    <img
+      class='product__image'
+      src='{{product.selected_or_first_available_variant.featured_image.src | image_url}}'
+      alt='{{product.selected_or_first_available_variant.featured_image.alt}}'
+    >
     {%- form 'product', product, id: 'product-form', class: 'product__form form' -%}
       <h1 class='form__heading heading heading--xl' id='product_heading'>{{- product.title -}}</h1>
       <p class='form__price'>

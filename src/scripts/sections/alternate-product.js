@@ -36,6 +36,7 @@ register('alternate-product', {
     const errorMessage = document.querySelector('.form__error');
     const priceValue = document.querySelector('.form__price-value');
     const moneyFormat = document.querySelector('.product').dataset.moneyFormat;
+    const productImage = document.querySelector('.product__image');
 
     if (errorMessage) {
       errorMessage.remove();
@@ -63,6 +64,8 @@ register('alternate-product', {
     window.history.replaceState({path: url}, '', url);
 
     priceValue.textContent = `${formatMoney(variant.price, moneyFormat)}`;
+
+    productImage.src = variant.featured_image.src;
   },
 
   onFormSubmit(event) {

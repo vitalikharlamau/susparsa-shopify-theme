@@ -1,0 +1,119 @@
+@font-face {
+  font-family: 'Avenir Next Rounded Std';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../assets/AvenirNextRoundedStd-Reg.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Avenir Next Rounded Std';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('../assets/AvenirNextRoundedStd-Med.woff2') format('woff2');
+}
+
+/* Palette */
+$palette-mirage: rgb(26, 31, 41);
+$palette-shuttle-gray: rgb(94, 98, 107);
+$palette-manatee: rgb(146, 148, 153);
+$palette-deep-koamaru: rgb(23, 28, 143);
+$palette-silver: rgb(204, 204, 204);
+$palette-white: rgb(255, 255, 255);
+$palette-bombay: rgb(174, 174, 176);
+$palette-antique-brass: rgb(200, 130, 82);
+$palette-apricot-peach: rgb(248, 202, 177);
+$palette-sea-pink: rgb(233, 160, 167);
+$palette-dull-lavender: rgb(186, 155, 229);
+$palette-concrete: rgb(242, 242, 242);
+$palette-deep-silver: rgb(189, 189, 189);
+$palette-red: rgb(255, 0, 0);
+
+/* Texts */
+$text-color-primary: $palette-mirage;
+$text-color-secondary: $palette-shuttle-gray;
+$text-color-tertiary: $palette-manatee;
+$text-color-quaternary: $palette-deep-koamaru;
+$text-color-complementary-dark: $palette-deep-silver;
+$text-color-complementary-light: $palette-white;
+$text-color-error: $palette-red;
+
+/* Borders */
+$border-color: $palette-silver;
+$border-color-input-checked: $palette-mirage;
+$border-color-hover: $palette-mirage;
+
+/* Backgrounds */
+$background-input-disabled: $palette-concrete;
+$background-input-hover: $palette-white;
+$background-button-light: $palette-white;
+$background-button-dark: $palette-deep-koamaru;
+$background-quantity-active: $palette-concrete;
+$background-button-disabled: $palette-deep-silver;
+$background-skip-link: $palette-silver;
+
+/* Colors */
+$color-white: $palette-white;
+$color-black: $palette-mirage;
+$color-gray: $palette-bombay;
+$color-latte: $palette-antique-brass;
+$color-orange-latte: $palette-apricot-peach;
+$color-pink-latte: $palette-sea-pink;
+$color-purple-latte: $palette-dull-lavender;
+
+/* Times */
+$time-transition-link: 0.3s;
+$time-transition-icons: 0.15s;
+$time-transition-label: 0.3s;
+$time-transition-button: 0.2s;
+$time-accordion-animation: 0.25s;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir Next Rounded Std', sans-serif;
+  line-height: 1.25;
+  color: $text-color-primary;
+}
+
+abbr {
+  text-decoration: none;
+  content: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 84.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@import './library/links';
+@import './library/headings';
+@import './library/buttons';
+
+@import './sections/alternate-header';
+@import './sections/alternate-product';
+@import './sections/alternate-recommendations';
+@import './sections/alternate-footer';
+
+@import './snippets/alternate-breadcrumbs';
+@import './snippets/alternate-product-card';
+@import './snippets/alternate-skip-link';

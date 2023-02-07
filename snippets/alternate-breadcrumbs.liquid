@@ -1,0 +1,23 @@
+<div class='breadcrumbs'>
+  <div class='breadcrumbs__container container'>
+    <nav class='breadcrumbs-navigation' aria-label='Breadcrumb'>
+      <ol class='breadcrumbs-navigation__list' role='list'>
+        <li class='breadcrumbs-navigation__item'>
+          <a class='breadcrumbs-navigation__page link link--sm' href='{{routes.root_url}}'>
+            {{- 'custom_names.home' | t -}}
+          </a>
+        </li>
+        {%- if product.collections != blank -%}
+          <li class='breadcrumbs-navigation__item'>
+            <a class='breadcrumbs-navigation__page link link--sm' href='{{product.collections[0].url}}'>
+              {{- product.collections[0].title -}}
+            </a>
+          </li>
+        {%- endif -%}
+        <li class='breadcrumbs-navigation__item'>
+          <span class='breadcrumbs-navigation__current' aria-current='page'>{{- product.title -}}</span>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>

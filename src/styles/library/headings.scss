@@ -1,0 +1,16 @@
+.heading {
+  font-weight: 400;
+
+  &--xl {
+    font-size: 1.375rem;
+    line-height: 1.2273;
+    letter-spacing: 0.01375rem;
+  }
+
+  &--md {
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    line-height: 1.3846;
+    letter-spacing: 0.0625rem;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "layout": "theme.alternate",
+  "sections": {
+    "product": {
+      "type": "alternate-product",
+      "blocks": {
+        "2df2177d-9319-4dde-b6b9-0c8b25c89b81": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Care Instructions",
+            "accordion_text": "Treat the neck with lemon oil"
+          }
+        },
+        "a173ce1a-f393-480a-a564-c9ff6caf2f4b": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Shipping & Returns",
+            "accordion_text": "Delivery by mail or courier. Return within 14 days"
+          }
+        },
+        "b32e830e-1d2d-403a-8a2c-64126e3708fc": {
+          "type": "accordion",
+          "settings": {
+            "accordion_title": "Guarantee",
+            "accordion_text": "Extended warranty for 2 years"
+          }
+        }
+      },
+      "block_order": [
+        "2df2177d-9319-4dde-b6b9-0c8b25c89b81",
+        "a173ce1a-f393-480a-a564-c9ff6caf2f4b",
+        "b32e830e-1d2d-403a-8a2c-64126e3708fc"
+      ],
+      "settings": {
+      }
+    },
+    "recommendations": {
+      "type": "alternate-recommendations",
+      "settings": {
+        "recommendations_title": "You may also like",
+        "collection": "electric",
+        "quality": 3
+      }
+    }
+  },
+  "order": [
+    "product",
+    "recommendations"
+  ]
+}

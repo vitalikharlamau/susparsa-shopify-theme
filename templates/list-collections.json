@@ -1,15 +1,41 @@
 {
   "sections": {
+    "14d0b32c-43d8-48ad-adc3-03a29a4ea12d": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17098834641174__14d0b32c-43d8-48ad-adc3-03a29a4ea12d-16703608087e88b115-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Categories<\/p>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--17098834641174__14d0b32c-43d8-48ad-adc3-03a29a4ea12d-16703608087e88b115-0"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "title": "Collections",
+        "title": "",
         "sort": "alphabetical",
-        "image_ratio": "square"
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "columns_mobile": "1"
       }
     }
   },
   "order": [
+    "14d0b32c-43d8-48ad-adc3-03a29a4ea12d",
     "main"
   ]
 }

@@ -36,8 +36,7 @@
       "previous": "Previous page"
     },
     "search": {
-      "search": "Search",
-      "reset": "Clear search term"
+      "search": "Search"
     },
     "cart": {
       "view": "View my cart ({{ count }})",
@@ -106,16 +105,10 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
+      "buy_it_now": "Buy it now",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
-      "inventory_in_stock": "In stock",
-      "inventory_in_stock_show_count": "{{ quantity }} in stock",
-      "inventory_low_stock": "Low stock",
-      "inventory_low_stock_show_count": "Low stock: {{ quantity }} left",
-      "inventory_out_of_stock": "Out of stock",
-      "inventory_out_of_stock_continue_selling": "In stock",
-      "sku": "SKU",
       "on_sale": "Sale",
       "product_variants": "Product variants",
       "media": {
@@ -153,8 +146,6 @@
       "sold_out": "Sold out",
       "unavailable": "Unavailable",
       "vendor": "Vendor",
-      "value_unavailable": "{{ option_value }} - Unavailable",
-      "variant_sold_out_or_unavailable": "Variant sold out or unavailable",
       "video_exit_message": "{{ title }} opens full screen video in same window.",
       "view_full_details": "View full details",
       "xr_button": "View in your space",
@@ -434,5 +425,12 @@
       "copy_code_success": "Code copied successfully",
       "print_gift_card": "Print"
     }
+  },
+  "custom_names": {
+    "home": "Home",
+    "homepage": "Homepage",
+    "items_inside": "Items inside",
+    "additional_information": "Additional product information",
+    "links_social": "Links to social networks"
   }
 }

@@ -1,0 +1,86 @@
+.footer {
+  padding: 5rem 0 2.0625rem;
+  border-top: 0.0625rem solid $border-color;
+
+  &__container {
+    max-width: 81.5rem;
+  }
+
+  &__wrapper {
+    margin-bottom: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 9.75rem;
+    row-gap: 1.25rem;
+  }
+
+  &__company-info {
+    color: $text-color-secondary;
+  }
+
+  &__copyright {
+    font-size: inherit;
+  }
+}
+
+.footer-info {
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__contacts {
+    font-style: inherit;
+  }
+
+  &__name-compamy {
+    color: $text-color-secondary;
+    letter-spacing: 0.0625rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__address {
+    color: $text-color-secondary;
+    letter-spacing: 0.0625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__image {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+    transition: $time-transition-icons linear;
+  }
+
+  &__image:hover {
+    transform: scale(1.2);
+  }
+
+  &__image:active {
+    transform: scale(0.8);
+  }
+}
+
+.footer-navigation {
+  &__heading {
+    margin-bottom: 2rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+  }
+}

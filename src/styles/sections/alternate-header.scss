@@ -1,0 +1,33 @@
+.header {
+  margin-bottom: 1.21875rem;
+  padding: 1.5rem 0 1.9375rem;
+  border-bottom: 0.0625rem solid $border-color;
+}
+
+.header-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    column-gap: 2.25rem;
+  }
+
+  &__image {
+    display: block;
+    width: 8.6875rem;
+    height: 2rem;
+    object-fit: contain;
+    transition: $time-transition-icons linear;
+  }
+
+  &__image:hover {
+    transform: scale(1.1);
+  }
+
+  &__image:active {
+    transform: scale(1);
+  }
+}

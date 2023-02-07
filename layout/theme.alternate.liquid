@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang='{{ request.locale.iso_code }}'>
+  <head>
+    {{ content_for_header }}
+  </head>
+
+  <link rel='stylesheet' href='{{ 'theme.min.css' | asset_url }}'>
+  <script src='{{ 'theme.min.js' | asset_url }}' defer></script>
+
+  <body>
+    {% render 'alternate-skip-link' %}
+
+    {% section 'alternate-header' %}
+
+    <main class='main' id="main">
+
+      {% render 'alternate-breadcrumbs' %}
+
+      {{ content_for_layout }}
+
+    </main>
+
+    {% section 'alternate-footer' %}
+  </body>
+</html>
